@@ -1,3 +1,4 @@
 *.o
 *TestRunner.c
 *.exe
+*.exe.core
