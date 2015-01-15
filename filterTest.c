@@ -4,7 +4,7 @@
 void test_filter_______________________________________________________________________________(){
 }
 
-void test_filter_on_providing_operation_isEven_should_filter_even_numbers_from_sample_array(){
+void test_filter_On_providing_predicate_isEven_filterIntegers_should_filter_even_numbers_from_sample_array(){
 	int i;
 	int sample[] = {2, 7, 8 ,6, 6, 1};
 	int *filteredIntegers;
@@ -21,7 +21,7 @@ void test_filter_on_providing_operation_isEven_should_filter_even_numbers_from_s
 	free(filteredIntegers);
 }
 	
-void test_filter_on_providing_operation_isEven_not_modify_input_array(){
+void test_filter_During_filtering_filterIntegers_should_not_modify_input_array(){
 	int i,sample[] = {2, 7, 8 ,6, 6, 1};
 	int sampleBackup[] = {2, 7, 8 ,6, 6, 1};
 	int *filteredIntegers;
