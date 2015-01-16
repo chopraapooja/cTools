@@ -51,3 +51,47 @@ void test_filter_During_filtering_filterIntegers_should_not_modify_input_array()
 	for (i = 0; i < 6; ++i)
 		assert(sampleBackup[i] == sample[i]);
 }
+
+void test_filter_On_providing_predicate_doesStartWithVowel_filterStrings_should_filter_strings_from_sample_stringsArray(){
+	int i;
+	char **sample[5] = {"Apple", "Pineapple","Orange", "Grapes", "Stauberry"};
+	char **filtered;
+	char **expected[2] = {"Apple","Orange"};
+
+	int doesStartWithVowel(char *string, int index){
+		if(string[0] == 'A' || string[0] == 'E' || string[0] == 'I' || string[0] == 'O' || string[0] == 'U'){
+			return 1;
+		}
+		return 0;
+	}
+
+	int len_of_filtered_strings = filterStrings(sample, 5, doesStartWithVowel, &filtered);
+	
+	assert(len_of_filtered_strings == 2);
+	for (i = 0; i < len_of_filtered_strings; ++i){
+		assert(filtered[i] == expected[i]);
+	}
+	free(filtered);
+}
+
+void test_filter_During_filtering_filterStrings_should_not_modify_input_array(){
+	int i;
+	char **sample[5] = {"Apple", "Pineapple","Orange", "Grapes", "Stauberry"};
+	char **sampleBackup[5] = {"Apple", "Pineapple","Orange", "Grapes", "Stauberry"};
+	char **filtered;
+	char **expected[2] = {"Apple","Orange"};
+
+	int doesStartWithVowel(char *string, int index){
+		if(string[0] == 'A' || string[0] == 'E' || string[0] == 'I' || string[0] == 'O' || string[0] == 'U'){
+			return 1;
+		}
+		return 0;
+	}
+
+	int len_of_filtered_strings = filterStrings(sample, 5, doesStartWithVowel, &filtered);
+	
+	for (i = 0; i < 5; ++i){
+		assert(sample[i] == sampleBackup[i]);
+	}
+	free(filtered);
+}
