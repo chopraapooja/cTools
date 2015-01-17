@@ -2,3 +2,6 @@
 *TestRunner.c
 *.exe
 *.exe.core
+indexOf.c
+indexOfTest.c
+spike.c
