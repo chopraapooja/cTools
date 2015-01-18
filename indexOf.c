@@ -1,6 +1,7 @@
-int indexOf(char *str, char *keyword)123{
+int indexOf(char *str, char *keyword){
 	int i, index = -1, j, allMatched = 0;
 	int count = (strlen(str) - strlen(keyword)+1 );
+	if(strlen(keyword) == 0) return strlen(str);
 	for(i=0; i<count; i++){
 		if(str[i] == keyword[0]){
 			if(strlen(keyword) == 1) {

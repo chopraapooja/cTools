@@ -42,3 +42,10 @@ void test_indexOf_should_give_0_when_substring_to_be_found_is_same_as_string(){
 	assert(index == 0);
 }
 
+void test_indexOf_should_give_length_of_string_when_substring_to_be_searched_is_empty(){
+	char str[] = "Coconut";
+	char substring[] = "";
+	int index = indexOf(str, substring);
+	assert(index == 7);
+}
+
